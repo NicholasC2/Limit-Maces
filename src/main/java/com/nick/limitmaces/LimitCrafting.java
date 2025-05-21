@@ -77,7 +77,11 @@ public class LimitCrafting implements Listener {
         if(event.getRecipe() != null) {
             if(event.getRecipe().getResult() != null) {
                 if(event.getRecipe().getResult().getType() == Material.MACE) {
-                    writeMaceCount(readMaceCount()+1);
+                    if(event.isShiftClick()) {
+                        event.setCancelled(true);
+                    } else {
+                        writeMaceCount(readMaceCount()+1);
+                    }
                 }
             }
         }

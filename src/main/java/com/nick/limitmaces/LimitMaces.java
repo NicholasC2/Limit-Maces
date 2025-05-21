@@ -10,7 +10,6 @@ public class LimitMaces extends JavaPlugin implements Listener {
             getDataFolder().mkdir();
         }
         saveDefaultConfig();
-        getServer().getPluginManager().registerEvents(new MaceCount(), this);
         getServer().getPluginManager().registerEvents(new LimitCrafting(this), this);
         getLogger().info("Plugin Enabled");
     }
